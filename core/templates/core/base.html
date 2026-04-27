@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Meu Portfólio{% endblock %}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Fundo principal bem escuro (padrão Dark Mode moderno) */
+            background-color: #131314;
+            /* Texto em cinza claro para alto contraste sem agredir os olhos */
+            color: #e3e3e3;
+        }
+        header {
+            /* Fundo levemente mais claro que o body para criar "camadas" */
+            background-color: #1e1f20;
+            color: #e3e3e3;
+            padding: 20px 0;
+            text-align: center;
+            /* Uma borda sutil ajuda a separar as seções no escuro */
+            border-bottom: 1px solid #333537;
+        }
+        header h1 {
+            font-size: 2em;
+        }
+        nav {
+            background-color: #131314;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #333537;
+        }
+        nav a {
+            /* Azul suave, típico de links em temas escuros */
+            color: #a8c7fa;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            /* Transição suave para o efeito de Hover */
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            /* Fica um azul mais brilhante ao passar o mouse */
+            color: #d3e3fd;
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        footer {
+            background-color: #1e1f20;
+            /* Texto do rodapé um pouco mais escuro para não chamar muita atenção */
+            color: #a0a6ac;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            border-top: 1px solid #333537;
+        }
+        {% block extra_css %}{% endblock %}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header_title %}Portfólio do Aluno{% endblock %}</h1>
+    </header>
+
+    <nav>
+        <a href="{% url 'portfolio:home' %}">Início</a>
+        <a href="{% url 'portfolio:projetos' %}">Projetos</a>
+        <a href="{% url 'portfolio:contatos' %}">Contatos</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Portfólio Acadêmico | UAST</p>
+    </footer>
+</body>
+</html>
