@@ -20,12 +20,14 @@ Siga o passo a passo abaixo estritamente na ordem para garantir que a integraç�
 
 ### Passo 1: Clonar o repositório
 
-No seu terminal, escolha a pasta onde deseja salvar o projeto e execute:
+Crie uma pasta geral para agrupar os projetos (opcional, mas recomendado) e abra o seu terminal nela. Em seguida, clone os dois repositórios:
 
 ```
-git clone [https://github.com/ErickAug/my_project_django_web2026](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
-cd SEU_REPOSITORIO
+# 1. Clonar o repositório do Microserviço
+git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO_MICROSERVICO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO_MICROSERVICO.git) notificacao_ms
 
+# 2. Clonar o repositório do Portfólio
+git clone [https://github.com/ErickAug/my_project_django_web26.1-2.git](https://github.com/ErickAug/my_project_django_web26.1-2.git) django_tutorial
 ```
 
 ### Passo 2: Configurar o Microserviço (Terminal 1)
