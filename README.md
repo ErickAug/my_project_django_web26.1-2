@@ -24,10 +24,10 @@ Crie uma pasta geral para agrupar os projetos (opcional, mas recomendado) e abra
 
 ```
 # 1. Clonar o repositório do Microserviço
-git clone [https://github.com/ErickAug/microservice-notifications.git](https://github.com/ErickAug/microservice-notifications.git) notificacao_ms
+git clone https://github.com/ErickAug/microservice-notifications.git notificacao_ms
 
 # 2. Clonar o repositório do Portfólio
-git clone [https://github.com/ErickAug/my_project_django_web26.1-2.git](https://github.com/ErickAug/my_project_django_web26.1-2.git) django_tutorial
+git clone https://github.com/ErickAug/my_project_django_web26.1-2.git django_tutorial
 ```
 
 ### Passo 2: Configurar o Microserviço (Terminal 1)
@@ -100,10 +100,10 @@ source venv/bin/activate
 Instale as dependências do portfólio:
 
 ```
-pip install django
+pip install django djangorestframework djangorestframework-simplejwt
 ```
 
-- Configuração Crucial: Abra o arquivo django_tutorial/settings.py no seu editor de código e cole o Hash que você copiou no Passo 3 na seguinte variável (geralmente no final do arquivo):
+- Configuração Crucial: Abra o arquivo meu_portifolio/settings.py no seu editor de código e cole o Hash que você copiou no Passo 3 na seguinte variável (geralmente no final do arquivo):
 
 ```
 NOTIFICACAO_MS_URL = '[http://127.0.0.1:8001](http://127.0.0.1:8001)'
@@ -135,11 +135,9 @@ Com os dois servidores rodando (Terminal 1 na 8001 e Terminal 2 na 8000):
 - Substitua ``COLE_SEU_HASH_AQUI`` pela sua API Key e execute:
 
 ```
-curl -X POST [http://127.0.0.1:8001/api/notificacoes/criar/](http://127.0.0.1:8001/api/notificacoes/criar/) ^
-     -H "X-Api-Key: COLE_SEU_HASH_AQUI" ^
-     -H "Content-Type: application/json" ^
-     -d "{\"user_id\": 1, \"mensagem\": \"Sua integracao funcionou perfeitamente!\"}"
+
+curl -X POST http://127.0.0.1:8001/api/notificacoes/criar/ -H "X-Api-Key: COLE_SUA_HASH_AQUI" -H "Content-Type: application/json" -d "{\"user_id\": 1, \"mensagem\": \"Sua integracao funcionou perfeitamente!\"}"
  ```
-(Nota: O comando acima usa ^ para quebra de linha no CMD do Windows. No PowerShell use crase   e no Linux/Mac use barra invertida`). Alternativamente, rode tudo em uma única linha.
+(Nota: Lembre-se de colocar a Hash da empresa e o user_id respectivo do cliente, que de padrão vem 1 para o primeiro usuário)
 
 #### O Resultado:  Aguarde até 5 segundos na página do seu portfólio. O JavaScript fará o polling, identificará a nova notificação, e o badge do sino ficará vermelho marcando "1". Clique no sino para ler a mensagem e clique nela para marcá-la como lida!
