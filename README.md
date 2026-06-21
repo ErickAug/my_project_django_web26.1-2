@@ -24,7 +24,7 @@ Crie uma pasta geral para agrupar os projetos (opcional, mas recomendado) e abra
 
 ```
 # 1. Clonar o repositório do Microserviço
-git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO_MICROSERVICO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO_MICROSERVICO.git) notificacao_ms
+git clone [https://github.com/ErickAug/microservice-notifications.git](https://github.com/ErickAug/microservice-notifications.git) notificacao_ms
 
 # 2. Clonar o repositório do Portfólio
 git clone [https://github.com/ErickAug/my_project_django_web26.1-2.git](https://github.com/ErickAug/my_project_django_web26.1-2.git) django_tutorial
